@@ -7,6 +7,8 @@ import '../../model/cell.dart';
 @CustomTag('cell-view')
 class CellView extends TableCellElement with Polymer, Observable {
   @published Cell cell;
+  @published String currentPlayer;
+  @published bool gridInterfaceEnabled;
 
   // we need this stuff because we're extending <td> instead of PolymerElement
   factory CellView() => new Element.tag('td', 'cell-view');
@@ -16,15 +18,16 @@ class CellView extends TableCellElement with Polymer, Observable {
 
   void enteredView() {
     super.enteredView();
-    print("CellView::enteredView()");
+    //print("CellView::enteredView()");
   }
 
   void clicked(Event event, var detail, Element target) {
     print("CellView::clicked()");
 
-    //if (cell.isEmpty) {
-    cell.state = Cell.PLAYER_1;
-    //}
+    if (gridInterfaceEnabled && cell.isEmpty) {
+      cell.state = currentPlayer;
+      dispatchEvent(new CustomEvent("cellstatechange"));
+    }
   }
 
   // this lets the global CSS (such as Bootstrap, perhaps) bleed through into the Shadow DOM of this element

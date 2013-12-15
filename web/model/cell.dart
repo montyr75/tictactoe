@@ -13,3 +13,12 @@ class Cell extends Observable {
 
   @override String toString() => state;
 }
+
+class CellPoint {
+  int row;
+  int col;
+
+  CellPoint(int this.row, int this.col);
+
+  String toString() => "row: $row, col: $col";
+}

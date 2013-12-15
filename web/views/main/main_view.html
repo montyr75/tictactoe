@@ -12,7 +12,7 @@
           <template repeat="{{row in cellGrid}}">
             <tr>
               <template repeat="{{cell in row}}">
-                <td is="cell-view" cell="{{cell}}"></td>
+                <td is="cell-view" cell="{{cell}}" currentPlayer="{{currentPlayer}}" gridInterfaceEnabled="{{gridInterfaceEnabled}}" on-cellstatechange="{{processTurn}}"></td>
               </template>
             </tr>
           </template>
