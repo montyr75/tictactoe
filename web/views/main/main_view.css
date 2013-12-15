@@ -1,0 +1,26 @@
+.box-container {
+  width: 475px;
+  height: 300px;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+}
+
+.btn {
+  cursor: default !important;
+}
+
+.tic-tac-toe-grid {
+  -webkit-user-select: none;
+}
+
+table.tic-tac-toe-grid > tbody > tr > td {
+  font-family: "Courier";
+  font-size: 26px;
+  color: black;
+  cursor: pointer;
+  width: 33.33% !important;
+  height: 20px;
+  vertical-align: middle;
+  text-align: center !important;
+}
