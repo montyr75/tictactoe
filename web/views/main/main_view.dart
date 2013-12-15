@@ -50,9 +50,9 @@ class MainView extends PolymerElement {
 
     // create new blank grid
     cellGrid = toObservable([
-      ['X', 'O', '_'],
-      ['O', 'X', '_'],
-      ['_', '_', 'X']
+      [new Cell(), new Cell(), new Cell()],
+      [new Cell(), new Cell(), new Cell()],
+      [new Cell(), new Cell(), new Cell()]
     ]);
   }
 

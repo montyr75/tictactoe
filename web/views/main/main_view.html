@@ -1,4 +1,6 @@
 <polymer-element name="main-view">
+  <link rel="import" href="../cell/cell_view.html">
+
   <template>
     <link rel="stylesheet" href="main_view.css" />
 
@@ -10,37 +12,17 @@
           <template repeat="{{row in cellGrid}}">
             <tr>
               <template repeat="{{cell in row}}">
-                <td on-click="{{cellClicked}}">{{cell}}</td>
+                <td is="cell-view" cell="{{cell}}"></td>
               </template>
             </tr>
           </template>
         </tbody>
       </table>
 
-      <!--table class="table table-bordered tic-tac-toe-grid">
-        <tbody>
-          <tr>
-            <td on-click="{{processTurn}}" data-cell-index="0">{{cellGrid[0]}}</td>
-            <td on-click="{{processTurn}}" data-cell-index="1">{{cellGrid[1]}}</td>
-            <td on-click="{{processTurn}}" data-cell-index="2">{{cellGrid[2]}}</td>
-          </tr>
-          <tr>
-            <td on-click="{{processTurn}}" data-cell-index="3">{{cellGrid[3]}}</td>
-            <td on-click="{{processTurn}}" data-cell-index="4">{{cellGrid[4]}}</td>
-            <td on-click="{{processTurn}}" data-cell-index="5">{{cellGrid[5]}}</td>
-          </tr>
-          <tr>
-            <td on-click="{{processTurn}}" data-cell-index="6">{{cellGrid[6]}}</td>
-            <td on-click="{{processTurn}}" data-cell-index="7">{{cellGrid[7]}}</td>
-            <td on-click="{{processTurn}}" data-cell-index="8">{{cellGrid[8]}}</td>
-          </tr>
-        </tbody>
-      </table-->
-
       <p id="turn">Turn: {{currentPlayer}}</p>
       <p id="game-state-message" class="label {{messageClass}}">{{gameStateMessage}}</p>
 
-      <div>
+      <div style="margin-top: 10px;">
         <button class="btn btn-default" on-click="{{change}}">New Game</button>
       </div>
     </div>

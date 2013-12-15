@@ -1,0 +1,27 @@
+<polymer-element name="cell-view" extends="td" on-click="{{clicked}}">
+  <template>
+    <style>
+      @host {
+        :scope {
+          font-family: "Courier";
+          font-size: 26px;
+          color: black;
+          cursor: pointer;
+          width: 64px;
+          height: 54px;
+          vertical-align: middle;
+          text-align: center;
+          padding: 0;
+        }
+
+        :scope:hover {
+          background-color: rgba(0,0,255, 0.1);
+        }
+      }
+    </style>
+
+    {{cell.state}}
+  </template>
+
+  <script type="application/dart" src="cell_view.dart"></script>
+</polymer-element>
