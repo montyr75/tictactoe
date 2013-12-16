@@ -22,11 +22,9 @@ class CellView extends TableCellElement with Polymer, Observable {
   }
 
   void clicked(Event event, var detail, Element target) {
-    print("CellView::clicked()");
-
     if (gridInterfaceEnabled && cell.isEmpty) {
       cell.state = currentPlayer;
-      dispatchEvent(new CustomEvent("cellstatechange"));
+      dispatchEvent(new CustomEvent("cell-state-change"));
     }
   }
 

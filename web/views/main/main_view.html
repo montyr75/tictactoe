@@ -12,7 +12,7 @@
           <template repeat="{{row in cellGrid}}">
             <tr>
               <template repeat="{{cell in row}}">
-                <td is="cell-view" cell="{{cell}}" currentPlayer="{{currentPlayer}}" gridInterfaceEnabled="{{gridInterfaceEnabled}}" on-cellstatechange="{{processTurn}}"></td>
+                <td is="cell-view" cell="{{cell}}" currentPlayer="{{currentPlayer}}" gridInterfaceEnabled="{{gridInterfaceEnabled}}" on-cell-state-change="{{processTurn}}"></td>
               </template>
             </tr>
           </template>
@@ -23,7 +23,7 @@
       <p id="game-state-message" class="label {{messageClass}}">{{gameStateMessage}}</p>
 
       <div style="margin-top: 10px;">
-        <button class="btn btn-default" on-click="{{change}}">New Game</button>
+        <button class="btn btn-default" on-click="{{newGame}}">New Game</button>
       </div>
     </div>
   </template>

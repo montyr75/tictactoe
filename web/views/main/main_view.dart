@@ -8,17 +8,18 @@ import '../../model/cell.dart';
 class MainView extends PolymerElement {
 
   // constants
+  static const int MAX_MOVES = 9;
   static const String DEFAULT_MSG_CLASS = "label-default";
   static const String WIN_MSG_CLASS = "label-success";
-  static const String TIE_MSG_CLASS = "label-important";
+  static const String TIE_MSG_CLASS = "label-warning";
 
   // strings
   static const String DEFAULT_MSG = "Let's play, bitches!";
   static const String CONGRATS_MSG = "Fuck yeah!";
-  static const String TIE_MSG = "Bloody hell! Another fuckin' tie. *sigh*";
+  static const String TIE_MSG = "Ah, hell! A fuckin' tie. *sigh*";
 
   // game data
-  @observable List<Cell> cellGrid;
+  @observable List<List<Cell>> cellGrid;
   @observable String currentPlayer;
   int turnCount;
 
@@ -74,32 +75,31 @@ class MainView extends PolymerElement {
     // count this turn
     turnCount++;
 
-//    // if there is a winner or a tie, end the game -- otherwise, just switch turns
-//    // NOTE: A win cannot occur before there have been 5 moves
-//    if (turnCount >= 5 && checkWin()) {
-//      gameStateMessage = "$CONGRATS_MSG Player $currentPlayer wins!";
-//      messageClass = WIN_MSG_CLASS;
-//      gridInterfaceEnabled = false;
-//    }
-//    else if (turnCount >= NUM_CELLS) {
-//      gameStateMessage = TIE_MSG;
-//      messageClass = TIE_MSG_CLASS;
-//      gridInterfaceEnabled = false;
-//    }
-//    else {
-//      currentPlayer = (currentPlayer == Cell.PLAYER_1) ? Cell.PLAYER_2 : Cell.PLAYER_1;
-//    }
+    // if there is a winner or a tie, end the game -- otherwise, just switch turns
+    // NOTE: A win cannot occur before there have been 5 moves
+    if (turnCount >= 5 && checkWin()) {
+      gameStateMessage = "$CONGRATS_MSG Player $currentPlayer wins!";
+      messageClass = WIN_MSG_CLASS;
+      gridInterfaceEnabled = false;
+    }
+    else if (turnCount >= MAX_MOVES) {
+      gameStateMessage = TIE_MSG;
+      messageClass = TIE_MSG_CLASS;
+      gridInterfaceEnabled = false;
+    }
+    else {
+      currentPlayer = (currentPlayer == Cell.PLAYER_1) ? Cell.PLAYER_2 : Cell.PLAYER_1;
+    }
   }
 
   bool checkWin() {
-    print("MainView::checkWin()");
+    for (List<CellPoint> winPattern in winPatterns) {
+      Cell cell1 = cellGrid[winPattern[0].row][winPattern[0].col];
+      Cell cell2 = cellGrid[winPattern[1].row][winPattern[1].col];
+      Cell cell3 = cellGrid[winPattern[2].row][winPattern[2].col];
 
-    // loop through each win pattern, checking for matches
-    for (List<int> winPattern in winPatterns) {
-      // if there are three cells that match and aren't empty, there's a win
-      if (cellGrid[winPattern[0]].state != Cell.EMPTY_CELL &&
-          cellGrid[winPattern[0]].state == cellGrid[winPattern[1]].state &&
-          cellGrid[winPattern[1]].state == cellGrid[winPattern[2]].state) {
+      // if all three cells match and aren't empty, there's a win
+      if (!cell1.state.isEmpty && cell1.state == cell2.state && cell2.state == cell3.state) {
         return true;
       }
     }
