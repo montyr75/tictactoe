@@ -10,6 +10,8 @@ class CellView extends TableCellElement with Polymer, Observable {
   @published String currentPlayer;
   @published bool gridInterfaceEnabled;
 
+  @observable bool highlight = true;
+
   // we need this stuff because we're extending <td> instead of PolymerElement
   factory CellView() => new Element.tag('td', 'cell-view');
   CellView.created() : super.created() {
@@ -19,6 +21,8 @@ class CellView extends TableCellElement with Polymer, Observable {
   void enteredView() {
     super.enteredView();
     //print("CellView::enteredView()");
+
+    bindCssClass(this, 'highlight', this, 'cell.state == Cell.EMPTY_CELL');
   }
 
   void clicked(Event event, var detail, Element target) {

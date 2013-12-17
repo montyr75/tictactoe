@@ -14,9 +14,9 @@ class MainView extends PolymerElement {
   static const String TIE_MSG_CLASS = "label-warning";
 
   // strings
-  static const String DEFAULT_MSG = "Let's play, bitches!";
-  static const String CONGRATS_MSG = "Fuck yeah!";
-  static const String TIE_MSG = "Ah, hell! A fuckin' tie. *sigh*";
+  static const String DEFAULT_MSG = "Let's play!";
+  static const String CONGRATS_MSG = "Yeah!";
+  static const String TIE_MSG = "Ah, hell! A friggin' tie. *sigh*";
 
   // game data
   @observable List<List<Cell>> cellGrid;

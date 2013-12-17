@@ -3,24 +3,46 @@
     <style>
       @host {
         :scope {
+          position: relative;
           font-family: "Courier";
           font-size: 26px;
           color: black;
-          cursor: pointer;
           width: 64px;
           height: 54px;
-          vertical-align: middle;
-          text-align: center;
           padding: 0;
         }
 
-        :scope:hover {
+        :scope.highlight:hover {
           background-color: rgba(0,0,255, 0.1);
         }
       }
+
+      #wrapper {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        cursor: default;
+      }
+
+      #wrapper.highlight:hover {
+        background-color: rgba(0,0,255, 0.1);
+        cursor: pointer;
+      }
     </style>
 
-    {{cell.state}}
+    <div id="wrapper" class="{{ {'highlight': cell.state.isEmpty && gridInterfaceEnabled} }}">{{cell.state}}</div>
   </template>
 
   <script type="application/dart" src="cell_view.dart"></script>
