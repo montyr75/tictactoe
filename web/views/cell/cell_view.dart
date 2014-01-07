@@ -21,8 +21,6 @@ class CellView extends TableCellElement with Polymer, Observable {
   void enteredView() {
     super.enteredView();
     //print("CellView::enteredView()");
-
-    bindCssClass(this, 'highlight', this, 'cell.state == Cell.EMPTY_CELL');
   }
 
   void clicked(Event event, var detail, Element target) {
