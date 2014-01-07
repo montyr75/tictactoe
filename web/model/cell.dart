@@ -15,10 +15,10 @@ class Cell extends Object with Observable {
 }
 
 class CellPoint {
-  int row;
-  int col;
+  final int row;
+  final int col;
 
-  CellPoint(int this.row, int this.col);
+  const CellPoint(int this.row, int this.col);
 
   String toString() => "row: $row, col: $col";
 }

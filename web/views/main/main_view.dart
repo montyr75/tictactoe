@@ -24,15 +24,15 @@ class MainView extends PolymerElement {
   int turnCount;
 
   // win patterns
-  final List<List<CellPoint>> winPatterns = [
-    [new CellPoint(0, 0), new CellPoint(0, 1), new CellPoint(0, 2)],  // row 1
-    [new CellPoint(1, 0), new CellPoint(1, 1), new CellPoint(1, 2)],  // row 2
-    [new CellPoint(2, 0), new CellPoint(2, 1), new CellPoint(2, 2)],  // row 3
-    [new CellPoint(0, 0), new CellPoint(1, 0), new CellPoint(2, 0)],  // col 1
-    [new CellPoint(0, 1), new CellPoint(1, 1), new CellPoint(2, 1)],  // col 2
-    [new CellPoint(0, 2), new CellPoint(1, 2), new CellPoint(2, 2)],  // col 3
-    [new CellPoint(0, 0), new CellPoint(1, 1), new CellPoint(2, 2)],  // diag 1
-    [new CellPoint(0, 2), new CellPoint(1, 1), new CellPoint(2, 0)]   // diag 2
+  final List<List<CellPoint>> winPatterns = const [
+    const [const CellPoint(0, 0), const CellPoint(0, 1), const CellPoint(0, 2)],  // row 1
+    const [const CellPoint(1, 0), const CellPoint(1, 1), const CellPoint(1, 2)],  // row 2
+    const [const CellPoint(2, 0), const CellPoint(2, 1), const CellPoint(2, 2)],  // row 3
+    const [const CellPoint(0, 0), const CellPoint(1, 0), const CellPoint(2, 0)],  // col 1
+    const [const CellPoint(0, 1), const CellPoint(1, 1), const CellPoint(2, 1)],  // col 2
+    const [const CellPoint(0, 2), const CellPoint(1, 2), const CellPoint(2, 2)],  // col 3
+    const [const CellPoint(0, 0), const CellPoint(1, 1), const CellPoint(2, 2)],  // diag 1
+    const [const CellPoint(0, 2), const CellPoint(1, 1), const CellPoint(2, 0)]   // diag 2
   ];
 
   // UI data
