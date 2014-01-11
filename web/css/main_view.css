@@ -11,3 +11,7 @@
 .btn {
   cursor: default !important;
 }
+
+p {
+  cursor: default;
+}
