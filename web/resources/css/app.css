@@ -1,3 +1,8 @@
+body {
+  background-color: #F8F8F8;
+  margin: 15px;
+}
+
 .box-container {
   width: 215px;
   height: 300px;
@@ -9,7 +14,7 @@
 }
 
 .btn {
-  cursor: default !important;
+  cursor: default;
 }
 
 p {

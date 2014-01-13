@@ -1,4 +1,4 @@
-name: Polymer App
+name: tic_tac_toe
 description: A Polymer Dart application.
 dependencies:
     polymer: any
