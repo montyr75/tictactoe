@@ -29,8 +29,4 @@ class CellView extends TableCellElement with Polymer, Observable {
       dispatchEvent(new CustomEvent("cell-state-change"));
     }
   }
-
-  // this lets the global CSS (such as Bootstrap, perhaps) bleed through into the Shadow DOM of this element
-  // take it out if this is not desireable
-  bool get applyAuthorStyles => true;
 }

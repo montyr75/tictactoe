@@ -107,8 +107,5 @@ class MainView extends PolymerElement {
     // if we get here, there is no win
     return false;
   }
-
-  // this lets the global CSS bleed through into the Shadow DOM of this element
-  bool get applyAuthorStyles => true;
 }
 

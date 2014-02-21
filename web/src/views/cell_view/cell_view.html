@@ -1,20 +1,18 @@
 <polymer-element name="cell-view" extends="td" on-click="{{clicked}}">
   <template>
     <style>
-      @host {
-        :scope {
-          position: relative;
-          font-family: "Courier";
-          font-size: 26px;
-          color: black;
-          width: 64px;
-          height: 54px;
-          padding: 0;
-        }
+      :host {
+        position: relative;
+        font-family: "Courier";
+        font-size: 26px;
+        color: black;
+        width: 64px;
+        height: 54px;
+        padding: 0;
+      }
 
-        :scope.highlight:hover {
-          background-color: rgba(0,0,255, 0.1);
-        }
+      :host.highlight:hover {
+        background-color: rgba(0,0,255, 0.1);
       }
 
       #wrapper {
