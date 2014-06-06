@@ -1,9 +1,10 @@
-<polymer-element name="main-view">
-  <link rel="import" href="../cell_view/cell_view.html">
+<link rel="import" href="../cell_view/cell_view.html">
 
+<polymer-element name="main-view">
   <template>
+    <link rel="stylesheet" href="../../../resources/css/app.css">
+
     <style>
-      @import "resources/css/app.css";
     </style>
 
     <h1>Tic-Tac-Toe</h1>
@@ -11,13 +12,9 @@
     <div class="box-container">
       <table class="table table-bordered tic-tac-toe-grid">
         <tbody>
-          <template repeat="{{row in cellGrid}}">
-            <tr>
-              <template repeat="{{cell in row}}">
-                <td is="cell-view" cell="{{cell}}" currentPlayer="{{currentPlayer}}" gridInterfaceEnabled="{{gridInterfaceEnabled}}" on-cell-state-change="{{processTurn}}"></td>
-              </template>
-            </tr>
-          </template>
+          <tr template repeat="{{row in cellGrid}}">
+            <td template repeat="{{cell in row}}" is="cell-view" cell="{{cell}}" currentPlayer="{{currentPlayer}}" gridInterfaceEnabled="{{gridInterfaceEnabled}}" on-cell-state-change="{{processTurn}}"></td>
+          </tr>
         </tbody>
       </table>
 

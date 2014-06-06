@@ -41,14 +41,15 @@ class MainView extends PolymerElement {
   @observable bool gridInterfaceEnabled;
 
   // non-visual initialization can be done here
-  MainView.created() : super.created();
+  MainView.created() : super.created() {
+    print("MainView::created()");
+    newGame();
+  }
 
   // other initialization can be done here
   @override void enteredView() {
     super.enteredView();
     print("MainView::enteredView()");
-
-    newGame();
   }
 
   void newGame() {
@@ -63,9 +64,9 @@ class MainView extends PolymerElement {
 
     // create new blank grid
     cellGrid = toObservable([
-      [new Cell(), new Cell(), new Cell()],
-      [new Cell(), new Cell(), new Cell()],
-      [new Cell(), new Cell(), new Cell()]
+      toObservable([new Cell(), new Cell(), new Cell()]),
+      toObservable([new Cell(), new Cell(), new Cell()]),
+      toObservable([new Cell(), new Cell(), new Cell()])
     ]);
   }
 
