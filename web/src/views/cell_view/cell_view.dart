@@ -18,9 +18,9 @@ class CellView extends TableCellElement with Polymer, Observable {
     polymerCreated();
   }
 
-  void enteredView() {
-    super.enteredView();
-    //print("CellView::enteredView()");
+  @override void attached() {
+    super.attached();
+    //print("CellView::attached()");
   }
 
   void clicked(Event event, var detail, Element target) {

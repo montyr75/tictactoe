@@ -1,7 +1,7 @@
 name: tic_tac_toe
 description: A Polymer Dart application -- Tic-Tac-Toe! Two-player only.
 dependencies:
-    polymer: ">=0.10.0"
+    polymer: any
 transformers:
 - polymer:
     entry_points: web/index.html

@@ -47,9 +47,9 @@ class MainView extends PolymerElement {
   }
 
   // other initialization can be done here
-  @override void enteredView() {
-    super.enteredView();
-    print("MainView::enteredView()");
+  @override void attached() {
+    super.attached();
+    print("MainView::attached()");
   }
 
   void newGame() {
