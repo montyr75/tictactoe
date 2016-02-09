@@ -30,7 +30,7 @@ class BoardView {
     log.info("$runtimeType()");
   }
 
-  void squareClicked(int squareIndex) {
+  void squareSelected(int squareIndex) {
     log.info("$runtimeType::squareClicked -- $squareIndex");
 
     if (interfaceEnabled && model.isSquareEmpty(squareIndex)) {
