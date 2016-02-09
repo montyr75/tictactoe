@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
     <title>Tic-Tac-Toe</title>
 
-    <!-- import polyfills -->
-    <script src="packages/web_components/platform.js"></script>
-    <script src="packages/web_components/dart_support.js"></script>
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
 
-    <!-- import custom element HTML -->
-    <link rel="import" href="src/views/main_view/main_view.html">
+    <!--<script src="resources/js/hammer.min.js"></script>-->
 
-    <!-- import CSS -->
-    <link rel="stylesheet" href="resources/css/app.css" />
-
-    <!-- initialize Polymer -->
-    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
   </head>
 
-  <body>
-    <main-view></main-view>
+  <body class="fullbleed">
+    <main-app class="fit layout vertical">Loading...</main-app>
   </body>
 </html>

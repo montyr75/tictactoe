@@ -1,0 +1,32 @@
+<style>
+  .content {
+    padding: 15px;
+  }
+
+  .app-title {
+    text-align: center;
+  }
+
+  toolbar-view {
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+</style>
+
+<paper-header-panel class="flex">
+  <paper-toolbar>
+    <div class="flex-auto"><div style="width: 40px; height: 40px;"></div></div>
+    <h2 class="app-title flex-auto">Tic-Tac-Toe</h2>
+    <div class="flex-auto" style="text-align: right;">
+      <paper-icon-button icon="refresh" (click)="newGame()"></paper-icon-button>
+    </div>
+  </paper-toolbar>
+
+  <div class="layout vertical center content">
+    <toolbar-view [width]="boardSize" [message]="message"></toolbar-view>
+
+    <board-view [size]="boardSize" [model]="board" [currentPlayer]="currentPlayer" [interfaceEnabled]="interfaceEnabled"
+                (win)="onWin($event)" (tie)="onTie()" (move)="nextTurn()">
+    </board-view>
+  </div>
+</paper-header-panel>
