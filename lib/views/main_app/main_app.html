@@ -23,7 +23,7 @@
   </paper-toolbar>
 
   <div class="layout vertical center content">
-    <toolbar-view [width]="boardSize" [message]="message"></toolbar-view>
+    <message-bar [width]="boardSize" [message]="message"></message-bar>
 
     <board-view [size]="boardSize" [model]="board" [currentPlayer]="currentPlayer" [interfaceEnabled]="interfaceEnabled"
                 (win)="onWin($event)" (tie)="onTie()" (move)="nextTurn()">

@@ -3,17 +3,17 @@ import 'package:logging/logging.dart';
 import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
 import 'package:polymer_elements/paper_material.dart';
 
-@Component(selector: 'toolbar-view',
+@Component(selector: 'message-bar',
     encapsulation: ViewEncapsulation.Native,
-    templateUrl: 'toolbar_view.html'
+    templateUrl: 'message_bar.html'
 )
-class ToolbarView {
+class MessageBar {
   final Logger log;
 
   @Input() String message;
   @Input() String width;
 
-  ToolbarView(Logger this.log) {
+  MessageBar(Logger this.log) {
     log.info("$runtimeType()");
   }
 }
