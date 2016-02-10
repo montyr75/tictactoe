@@ -9,8 +9,8 @@ dependencies:
   angular2: any
   browser: ^0.10.0
   polymer: ^1.0.0-rc.15
-  web_components: ^0.12.0
   polymer_elements: ^1.0.0-rc.8
+  web_components: ^0.12.0
   logging: any
   intl: any
 

@@ -1,5 +1,3 @@
-library tic_tac_toe.lib.views.board_view;
-
 import 'package:angular2/angular2.dart';
 import 'package:logging/logging.dart';
 import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';

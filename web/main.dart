@@ -1,5 +1,3 @@
-library tic_tac_toe.web.main;
-
 import 'dart:html';
 
 import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
