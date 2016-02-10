@@ -1,4 +1,4 @@
 Tic-Tac-Toe
 ======
 
-A Polymer Dart implementation of the classic game. This version requires two human players.
+An implementation of the classic game built with Dart, Angular 2, and Polymer. This version requires two human players.
