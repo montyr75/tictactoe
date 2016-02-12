@@ -18,8 +18,8 @@ class BoardView {
   @Input() bool interfaceEnabled;
 
   @Output() EventEmitter win = new EventEmitter<String>();
-  @Output() EventEmitter tie = new EventEmitter<bool>();
-  @Output() EventEmitter move = new EventEmitter<bool>();
+  @Output() EventEmitter tie = new EventEmitter();
+  @Output() EventEmitter move = new EventEmitter();
 
   int boardSize;
   int squareSize;
@@ -38,10 +38,10 @@ class BoardView {
         win.emit(winner);
       }
       else if (model.isFull) {
-        tie.emit(true);
+        tie.emit(null);
       }
       else {
-        move.emit(true);
+        move.emit(null);
       }
     }
   }

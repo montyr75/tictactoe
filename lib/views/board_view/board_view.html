@@ -17,8 +17,11 @@
 </style>
 
 <paper-material elevation="1" class="layout horizontal wrap" [style.width.px]="boardSize">
-  <div *ngFor="#square of model?.board, #i=index" class="square layout vertical center center-justified"
-       [ngStyle]="squareStyles" (click)="squareSelected(i)" [class.highlight]="interfaceEnabled && model.isSquareEmpty(i)">
+  <div *ngFor="#square of model?.board, #i=index"
+       class="square layout vertical center center-justified"
+       [ngStyle]="squareStyles"
+       (click)="squareSelected(i)"
+       [class.highlight]="interfaceEnabled && model.isSquareEmpty(i)">
     {{square}}
   </div>
 </paper-material>
