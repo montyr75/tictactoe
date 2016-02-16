@@ -7,8 +7,7 @@ import '../../model/ttt_board.dart';
 
 @Component(selector: 'board-view',
     encapsulation: ViewEncapsulation.Native,
-    templateUrl: 'board_view.html',
-    directives: const [NgFor, NgStyle]
+    templateUrl: 'board_view.html'
 )
 class BoardView {
   final Logger log;
