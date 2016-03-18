@@ -6,7 +6,7 @@ Well, the good news is that you don't have to choose! You can have it all. In th
 
 > *Note:* This tutorial's [full code](https://github.com/montyr75/tictactoe) is available on GitHub for those who would like to play with it or use it as a reference.
 
-The code was tested with Dart SDK 1.15.0, Polymer Dart 1.0.0-rc.15, and Angular 2.0.0-beta.9.
+The code was tested with Dart SDK 1.15.0, Polymer Dart 1.0.0-rc.15, and Angular 2.0.0-beta.11.
 
 ##The Basics?
 This is an intermediate tutorial, so we won't spend a lot of time covering Dart, HTML, or CSS basics, instead focusing on using Angular 2 and Polymer to build apps. For info on how you can set up a working Dart coding environment and a quick word on Polymer Dart, glance through the first few sections of [Polymer Dart Code Lab: Your First Elements](https://dart.academy/polymer-dart-code-lab-your-first-elements/). If you aren't a proficient user of HTML and CSS, you should probably go study up and come back when you are.
