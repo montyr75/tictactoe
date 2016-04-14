@@ -11,7 +11,7 @@ class MessageBar {
   final Logger log;
 
   @Input() String message;
-  @Input() String width;
+  @Input() int width;
 
   MessageBar(Logger this.log) {
     log.info("$runtimeType()");
