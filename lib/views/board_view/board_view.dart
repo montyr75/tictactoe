@@ -11,7 +11,7 @@ import '../../model/ttt_board.dart';
     templateUrl: 'board_view.html'
 )
 class BoardView {
-  final LoggerService log;
+  final LoggerService _log;
 
   @Input() TTTBoard model;
   @Input() String currentPlayer;
@@ -24,12 +24,12 @@ class BoardView {
   int boardSize;
   int squareSize;
 
-  BoardView(LoggerService this.log) {
-    log.info("$runtimeType()");
+  BoardView(LoggerService this._log) {
+    _log.info("$runtimeType()");
   }
 
   void squareSelected(int squareIndex) {
-    log.info("$runtimeType::squareClicked -- $squareIndex");
+    _log.info("$runtimeType::squareClicked -- $squareIndex");
 
     if (interfaceEnabled && model.isSquareEmpty(squareIndex)) {
       String winner = model.move(squareIndex, currentPlayer);

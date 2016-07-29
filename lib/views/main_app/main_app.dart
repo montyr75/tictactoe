@@ -17,7 +17,7 @@ import '../message_bar/message_bar.dart';
     directives: const [BoardView, MessageBar]
 )
 class MainApp {
-  final LoggerService log;
+  final LoggerService _log;
 
   TTTBoard board;
   String currentPlayer;
@@ -25,8 +25,8 @@ class MainApp {
   int boardSize = 450;
   String message;
 
-  MainApp(LoggerService this.log) {
-    log.info("$runtimeType()");
+  MainApp(LoggerService this._log) {
+    _log.info("$runtimeType()");
 
     newGame();
   }

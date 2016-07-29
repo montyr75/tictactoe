@@ -10,12 +10,12 @@ import '../../services/logger_service.dart';
     templateUrl: 'message_bar.html'
 )
 class MessageBar {
-  final LoggerService log;
+  final LoggerService _log;
 
   @Input() String message;
   @Input() int width;
 
-  MessageBar(LoggerService this.log) {
-    log.info("$runtimeType()");
+  MessageBar(LoggerService this._log) {
+    _log.info("$runtimeType()");
   }
 }
