@@ -3,17 +3,19 @@ import 'package:logging/logging.dart';
 import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
 import 'package:polymer_elements/paper_material.dart';
 
+import '../../services/logger_service.dart';
+
 @Component(selector: 'message-bar',
     encapsulation: ViewEncapsulation.Native,
     templateUrl: 'message_bar.html'
 )
 class MessageBar {
-  final Logger log;
+  final LoggerService log;
 
   @Input() String message;
   @Input() int width;
 
-  MessageBar(Logger this.log) {
+  MessageBar(LoggerService this.log) {
     log.info("$runtimeType()");
   }
 }

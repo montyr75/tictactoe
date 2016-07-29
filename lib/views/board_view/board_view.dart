@@ -3,6 +3,7 @@ import 'package:logging/logging.dart';
 import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
 import 'package:polymer_elements/paper_material.dart';
 
+import '../../services/logger_service.dart';
 import '../../model/ttt_board.dart';
 
 @Component(selector: 'board-view',
@@ -10,7 +11,7 @@ import '../../model/ttt_board.dart';
     templateUrl: 'board_view.html'
 )
 class BoardView {
-  final Logger log;
+  final LoggerService log;
 
   @Input() TTTBoard model;
   @Input() String currentPlayer;
@@ -23,7 +24,7 @@ class BoardView {
   int boardSize;
   int squareSize;
 
-  BoardView(Logger this.log) {
+  BoardView(LoggerService this.log) {
     log.info("$runtimeType()");
   }
 

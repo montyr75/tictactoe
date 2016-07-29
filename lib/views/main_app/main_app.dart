@@ -6,6 +6,7 @@ import 'package:polymer_elements/paper_header_panel.dart';
 import 'package:polymer_elements/paper_toolbar.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
 
+import '../../services/logger_service.dart';
 import '../../model/ttt_board.dart';
 import '../board_view/board_view.dart';
 import '../message_bar/message_bar.dart';
@@ -16,7 +17,7 @@ import '../message_bar/message_bar.dart';
     directives: const [BoardView, MessageBar]
 )
 class MainApp {
-  final Logger log;
+  final LoggerService log;
 
   TTTBoard board;
   String currentPlayer;
@@ -24,7 +25,7 @@ class MainApp {
   int boardSize = 450;
   String message;
 
-  MainApp(Logger this.log) {
+  MainApp(LoggerService this.log) {
     log.info("$runtimeType()");
 
     newGame();
