@@ -1,4 +1,4 @@
 Tic-Tac-Toe
 ======
 
-An implementation of the classic game built with Dart, Angular 2, and Polymer. This version requires two human players. Read the full tutorial: [Dart, Angular 2, and Polymer Together](https://dart.academy/dart-angular-2-and-polymer-together/).
+An implementation of the classic game built with AngularDart and CSS Grid. This version requires two human players. Read the full tutorial: [Web Games with AngularDart and CSS Grid: Tic-Tac-Toe](https://dart.academy/dart-angular-2-and-polymer-together/).

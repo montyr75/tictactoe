@@ -1,0 +1,30 @@
+<style>
+  :host {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  }
+
+  .cell {
+    outline: 1px solid black;
+    cursor: default;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15vmin;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .highlight {
+    background-color: lightblue;
+  }
+</style>
+
+<div *ngFor="let cell of model?.board; let i = index"
+     class="cell layout vertical center-center"
+     (click)="cellSelected(i)"
+     [class.highlight]="interfaceEnabled && model.isCellEmpty(i)">
+  {{cell}}
+</div>

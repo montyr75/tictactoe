@@ -1,19 +1,21 @@
-import 'package:angular2/angular2.dart';
-import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
-import 'package:polymer_elements/iron_icons.dart';
-import 'package:polymer_elements/paper_header_panel.dart';
-import 'package:polymer_elements/paper_toolbar.dart';
-import 'package:polymer_elements/paper_icon_button.dart';
+import 'package:angular/angular.dart';
+import 'package:angular_components/material_button/material_button.dart';
+import 'package:angular_components/material_icon/material_icon.dart';
 
-import '../../services/logger_service.dart';
-import '../../model/ttt_board.dart';
-import '../board_view/board_view.dart';
-import '../message_bar/message_bar.dart';
+import 'src/services/logger_service.dart';
+import 'src/models/ttt_board.dart';
+import 'src/components/board_view/board_view.dart';
+import 'src/components/message_bar/message_bar.dart';
 
 @Component(selector: 'main-app',
-    encapsulation: ViewEncapsulation.Native,
     templateUrl: 'main_app.html',
-    directives: const [BoardView, MessageBar]
+    directives: const [
+      BoardView,
+      MessageBar,
+      MaterialButtonComponent,
+      MaterialIconComponent
+    ],
+    styleUrls: const ['package:angular_components/app_layout/layout.scss.css']
 )
 class MainApp {
   final LoggerService _log;
@@ -21,7 +23,6 @@ class MainApp {
   TTTBoard board;
   String currentPlayer;
   bool interfaceEnabled;
-  int boardSize = 450;
   String message;
 
   MainApp(LoggerService this._log) {

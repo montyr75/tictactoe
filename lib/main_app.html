@@ -1,0 +1,39 @@
+<style>
+  .app-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+  }
+
+  main {
+    margin: 15px;
+    width: 90vw;
+    height: 90vh;
+  }
+
+  message-bar {
+    margin-bottom: 1vh;
+  }
+</style>
+
+<div class="fit layout vertical center">
+  <header class="material-header">
+    <div class="material-header-row">
+      <h1 class="app-title">Tic-Tac-Toe</h1>
+      <div class="material-spacer"></div>
+      <material-button icon (trigger)="newGame()">
+        <material-icon icon="refresh"></material-icon>
+      </material-button>
+    </div>
+  </header>
+
+  <main class="layout vertical">
+    <message-bar [message]="message"></message-bar>
+
+    <board-view class="flex"
+                [model]="board"
+                [currentPlayer]="currentPlayer"
+                [interfaceEnabled]="interfaceEnabled"
+                (win)="onWin($event)" (tie)="onTie()" (move)="nextTurn()">
+    </board-view>
+  </main>
+</div>

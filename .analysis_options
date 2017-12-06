@@ -1,0 +1,37 @@
+# This file allows you to configure the Dart analyzer.
+#
+# The commented part below is just for inspiration. Read the guide here:
+# https://github.com/dart-lang/sdk/tree/master/pkg/analyzer#configuring-the-analyzer
+
+# analyzer:
+#   strong-mode: true
+#   excludes:
+#     - path/to/excluded/files/**
+# linter:
+#   rules:
+#     # see catalogue here: http://dart-lang.github.io/linter/lints/
+#     - hash_and_equals
+
+analyzer:
+  strong-mode: true
+    implicit-casts: false
+    implicit-dynamic: false
+
+  language:
+    enableStrictCallChecks: true
+    enableSuperMixins: true
+    enableAssertInitializer: true
+
+  linter:
+    rules:
+      - always_declare_return_types
+      - camel_case_types
+      - empty_constructor_bodies
+      - annotate_overrides
+      - avoid_init_to_null
+      - constant_identifier_names
+      - one_member_abstracts
+      - slash_for_doc_comments
+      - sort_constructors_first
+      - unnecessary_brace_in_string_interp
+      - unrelated_type_equality_checks

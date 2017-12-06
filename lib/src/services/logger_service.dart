@@ -1,4 +1,3 @@
-import 'package:angular2/angular2.dart';
 import 'package:logging/logging.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
